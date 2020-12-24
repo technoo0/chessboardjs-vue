@@ -20,10 +20,15 @@ Please see chessboardjs.com for documentation and examples.
     <div id="board1" style="width: 400px"></div>
 ```
 ```js
-
+    //Vue
     import ChessBoard from "chessboardjs-vue";
-
-    ChessBoard("board1","start");
+    
+    export default {
+        mounted(){
+            ChessBoard('board1',"start");
+        }
+  
+}
 
 ```
 Please see chessboardjs.com for documentation and examples.
