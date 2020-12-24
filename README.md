@@ -1,7 +1,7 @@
 # Chessboardjs-Vue
 
 
-Fork from [chessboardjs](https://github.com/oakmac/chessboardjs) that makes the moudle work with Vue and Webpack
+Fork from [chessboardjs](https://github.com/oakmac/chessboardjs) that makes the module  work with Vue and Webpack
 
 Please see chessboardjs.com for documentation and examples.
 
