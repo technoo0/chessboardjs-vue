@@ -1,0 +1,29 @@
+{
+  "name": "vue-chessboardjs",
+  "version": "1.0.0",
+  "description": "Fork from chessboardjs that makes the moudle work with Vue and Webpack",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/technoo0/vue-chessboard.js.git"
+  },
+  "keywords": [
+    "vue",
+    "chessboard",
+    "chess",
+    "webpack"
+  ],
+  "author": "Marwan Fouda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/technoo0/vue-chessboard.js/issues"
+  },
+  "homepage": "https://github.com/technoo0/vue-chessboard.js#readme"
+}
