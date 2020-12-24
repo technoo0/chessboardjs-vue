@@ -1,4 +1,4 @@
-# Vue-ChessBoardJs
+# Chessboardjs-Vue
 
 
 Fork from [chessboardjs](https://github.com/oakmac/chessboardjs) that makes the moudle work with Vue and Webpack
@@ -10,7 +10,7 @@ Please see chessboardjs.com for documentation and examples.
 
 ```sh
     # NPM
-    npm install vue-chessboard.js
+    npm install chessboardjs-vue
     
 ```
 
@@ -21,7 +21,7 @@ Please see chessboardjs.com for documentation and examples.
 ```
 ```js
 
-    import ChessBoard from "vue-chessboard.js";
+    import ChessBoard from "chessboardjs-vue";
 
     ChessBoard("board1","start");
 
