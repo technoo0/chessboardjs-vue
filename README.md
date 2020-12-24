@@ -40,7 +40,7 @@ Please see chessboardjs.com for documentation and examples.
 - second I inked the board css 
 - third I linked the Chess pisces images 
 
-##Docs and Examples
+## Docs and Examples
 
 - Docs - <http://chessboardjs.com/docs>
 - Examples - <http://chessboardjs.com/examples>
