@@ -1565,7 +1565,7 @@ export default  function constructor (containerElOrString, config) {
       drawPositionInstant()
     }
   }
-
+  window.addEventListener("resize", function() {widget.resize()});
   widget.resize = function () {
     // calulate the new square size
     squareSize = calculateSquareSize()
