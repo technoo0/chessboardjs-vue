@@ -1621,6 +1621,9 @@ export default  function constructor (containerElOrString, config) {
 
     // do nothing if there is no piece on this square
     var square = $(this).attr('data-square')
+    if (isFunction(config.touchSquare)){
+      config.touchSquare(square, validSquare(square))
+    }
     if (!validSquare(square)) return
     if (!currentPosition.hasOwnProperty(square)) return
 
@@ -1638,7 +1641,6 @@ export default  function constructor (containerElOrString, config) {
     if (!config.sparePieces) return
 
     var piece = $(this).attr('data-piece')
-
     beginDraggingPiece('spare', piece, evt.pageX, evt.pageY)
   }
 
@@ -1774,6 +1776,7 @@ export default  function constructor (containerElOrString, config) {
     if (isTouchDevice()) {
       $board.on('touchstart', '.' + CSS.square, touchstartSquare)
       $container.on('touchstart', '.' + CSS.sparePieces + ' .' + CSS.piece, touchstartSparePiece)
+      $board.on('touchmove',stopDefault)
       $window
         .on('touchmove', throttledTouchmoveWindow)
         .on('touchend', touchendWindow)
