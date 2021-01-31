@@ -35,6 +35,9 @@
 .highlight1-32417, .highlight2-9c5d2 {
   box-shadow: inset 0 0 3px 3px yellow;
 }
+.highlightgray{
+  box-shadow: inset 0 0 3px 3px blueviolet;
+}
 
 .notation-322f9 {
   cursor: default;

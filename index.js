@@ -53,6 +53,7 @@ CSS['chessboard'] = 'chessboard-63f37'
 CSS['clearfix'] = 'clearfix-7da63'
 CSS['highlight1'] = 'highlight1-32417'
 CSS['highlight2'] = 'highlight2-9c5d2'
+CSS['highlightgray'] = 'highlightgray'
 CSS['notation'] = 'notation-322f9'
 CSS['numeric'] = 'numeric-fc462'
 CSS['piece'] = 'piece-417db'
@@ -1594,6 +1595,27 @@ export default  function constructor (containerElOrString, config) {
   widget.start = function (useAnimation) {
     widget.position('start', useAnimation)
   }
+  widget.highlight = function(square){
+    
+    greySquare(square)
+
+  }
+  widget.removeHightlight = function(square){
+    removeGreySquares(square)
+  }
+  function greySquare (square) {
+    //console.log('dd')
+    
+    //$([`# ${id}`]).addClass(CSS.highlightgray)
+    $('#' + squareElsIds[square]).addClass(CSS.highlightgray)
+  }
+  function removeGreySquares (square) {
+    //$('#' + squareElsIds[square]).removeClass(CSS.highlightgray)
+    $board
+      .find('.' + CSS.square)
+      .removeClass(CSS.highlightgray)
+  }
+  
 
   // -------------------------------------------------------------------------
   // Browser Events
@@ -1614,7 +1636,12 @@ export default  function constructor (containerElOrString, config) {
 
     beginDraggingPiece(square, currentPosition[square], evt.pageX, evt.pageY)
   }
-
+  function SendTheTouch(e){
+    var square = $(this).attr('data-square')
+    if (isFunction(config.touchSquare)){
+      config.touchSquare(square, validSquare(square))
+    }
+  }
   function touchstartSquare (e) {
     // do nothing if we're not draggable
     if (!config.draggable) return
@@ -1622,7 +1649,7 @@ export default  function constructor (containerElOrString, config) {
     // do nothing if there is no piece on this square
     var square = $(this).attr('data-square')
     if (isFunction(config.touchSquare)){
-      config.touchSquare(square, validSquare(square))
+      config.touchSquare(square, currentPosition.hasOwnProperty(square))
     }
     if (!validSquare(square)) return
     if (!currentPosition.hasOwnProperty(square)) return
@@ -1776,7 +1803,7 @@ export default  function constructor (containerElOrString, config) {
     if (isTouchDevice()) {
       $board.on('touchstart', '.' + CSS.square, touchstartSquare)
       $container.on('touchstart', '.' + CSS.sparePieces + ' .' + CSS.piece, touchstartSparePiece)
-      $board.on('touchmove',stopDefault)
+      //$board.on('touchmove',stopDefault)
       $window
         .on('touchmove', throttledTouchmoveWindow)
         .on('touchend', touchendWindow)
