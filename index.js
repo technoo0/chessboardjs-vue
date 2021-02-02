@@ -1626,6 +1626,9 @@ export default  function constructor (containerElOrString, config) {
   }
 
   function mousedownSquare (evt) {
+    if( typeof config.mouseClick == 'function'){
+      config.mouseClick(evt)
+    }
     // do nothing if we're not draggable
     if (!config.draggable) return
 
