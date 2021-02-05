@@ -685,7 +685,7 @@ export default  function constructor (containerElOrString, config) {
   // Stateful
   // -------------------------------------------------------------------------
 
-  var boardBorderSize = 2
+  var boardBorderSize = 0
   var currentOrientation = 'white'
   var currentPosition = {}
   var draggedPiece = null
@@ -779,7 +779,7 @@ export default  function constructor (containerElOrString, config) {
     }
 
     // pad one pixel
-    var boardWidth = containerWidth - 1
+    var boardWidth = containerWidth 
 
     while (boardWidth % 8 !== 0 && boardWidth > 0) {
       boardWidth = boardWidth - 1
