@@ -37,7 +37,7 @@ Please see chessboardjs.com for documentation and examples.
 
 
 - first I exported the constructor function instead of using jquery   
-- second I inked the board css 
+- second I linked the board css 
 - third I linked the Chess pisces images 
 
 ## Docs and Examples
